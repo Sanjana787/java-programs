@@ -1,0 +1,6 @@
+replace
+counting 
+repeating
+spliting
+removing whiten space
+handling long string

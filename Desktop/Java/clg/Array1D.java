@@ -12,13 +12,11 @@ public class Array1D {
         for(int i=0;i<n;i++){
           arr[i]=Integer.parseInt(br.readLine());
         }
-        System.out.println("entered array elements are ::");
-        for(int i :arr){
-           System.out.println(i);
-        }    
+       
         for(int i :arr){
             sum+=i;
         }
+        System.out.println("total-marks:"+sum);
         System.out.println("percent is::"+sum/n);
         
     }

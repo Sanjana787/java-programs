@@ -1,0 +1,75 @@
+#to handle missing values in data.
+
+import numpy as np
+import pandas as pd
+
+df=pd.DataFrame({'Col_A':[1,2,4,4,np.nan,np.nan,np.nan,6],
+                'Col_B':[1.2,1.4,np.nan,6.2,None,1.1,4.3,8.4],
+                'Col_C':['a','b','?','d','e','--',np.nan,'h'],
+                'Col_D':[True,True,False,True,np.nan,None,False,True]})
+df
+
+df.to_csv('dataset.csv',index=False)
+
+df['Col_E']=pd.Series([1,2,4,4,np.nan,np.nan,np.nan,6],dtype=pd.Int64Dtype())
+
+df
+
+#to check the the input is null or not 
+df.notna()
+df.notnull()
+
+#return columnwise the null value 
+df.isna().any()
+
+#returns the numeric value of null present in columns
+df.isna().sum()
+
+
+# to create the desciption related to missing values
+missing_values=['?','--']
+df_test=pd.read_csv('dataset.csv',na_values=missing_values)
+df_test
+
+#to create copy of a file
+
+import copy
+dfC=df_test.copy
+
+# to handle missing values
+#if all the columns are null then it is deleted 
+df_test.dropna(axis=0,how='all',inplace=True)
+df_test
+
+#if minimum of the value given in thresh is same in column i none
+df_test.dropna(axis=0,thresh=3,inplace=True)
+df_test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

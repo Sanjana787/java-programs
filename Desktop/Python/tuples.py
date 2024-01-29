@@ -1,0 +1,8 @@
+t=()
+t=(1,)
+t=(1,2,3,4,5,4,3,5,4,6,7)
+print(t)
+print(t[0])
+print(t[-3:])
+print(t.count(4))
+print(t.index(4))
